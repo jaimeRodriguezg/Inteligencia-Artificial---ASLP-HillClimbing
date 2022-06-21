@@ -1,0 +1,856 @@
+El archivo existe
+El número de aviones es: 10
+Una línea:  129 155 559 10.00 10.00 
+Una línea:  99999 3 15 15 15 15 15 15 15 15
+Los datos del avion 0 son: 
+_Ei: 129
+_Ti: 155
+_Li: 559
+_gi: 10
+_hi: 10
+El valor del índice: 0 es: 99999
+El valor del índice: 1 es: 3
+El valor del índice: 2 es: 15
+El valor del índice: 3 es: 15
+El valor del índice: 4 es: 15
+El valor del índice: 5 es: 15
+El valor del índice: 6 es: 15
+El valor del índice: 7 es: 15
+El valor del índice: 8 es: 15
+El valor del índice: 9 es: 15
+Una línea:  195 258 744 10.00 10.00 
+Una línea:  3 99999 15 15 15 15 15 15 15 15
+Los datos del avion 1 son: 
+_Ei: 195
+_Ti: 258
+_Li: 744
+_gi: 10
+_hi: 10
+El valor del índice: 0 es: 3
+El valor del índice: 1 es: 99999
+El valor del índice: 2 es: 15
+El valor del índice: 3 es: 15
+El valor del índice: 4 es: 15
+El valor del índice: 5 es: 15
+El valor del índice: 6 es: 15
+El valor del índice: 7 es: 15
+El valor del índice: 8 es: 15
+El valor del índice: 9 es: 15
+Una línea:  89 98 510 30.00 30.00 
+Una línea:  15 15 99999 8 8 8 8 8 8 8
+Los datos del avion 2 son: 
+_Ei: 89
+_Ti: 98
+_Li: 510
+_gi: 30
+_hi: 30
+El valor del índice: 0 es: 15
+El valor del índice: 1 es: 15
+El valor del índice: 2 es: 99999
+El valor del índice: 3 es: 8
+El valor del índice: 4 es: 8
+El valor del índice: 5 es: 8
+El valor del índice: 6 es: 8
+El valor del índice: 7 es: 8
+El valor del índice: 8 es: 8
+El valor del índice: 9 es: 8
+Una línea:  96 106 521 30.00 30.00 
+Una línea:  15 15 8 99999 8 8 8 8 8 8
+Los datos del avion 3 son: 
+_Ei: 96
+_Ti: 106
+_Li: 521
+_gi: 30
+_hi: 30
+El valor del índice: 0 es: 15
+El valor del índice: 1 es: 15
+El valor del índice: 2 es: 8
+El valor del índice: 3 es: 99999
+El valor del índice: 4 es: 8
+El valor del índice: 5 es: 8
+El valor del índice: 6 es: 8
+El valor del índice: 7 es: 8
+El valor del índice: 8 es: 8
+El valor del índice: 9 es: 8
+Una línea:  110 123 555 30.00 30.00 
+Una línea:  15 15 8 8 99999 8 8 8 8 8
+Los datos del avion 4 son: 
+_Ei: 110
+_Ti: 123
+_Li: 555
+_gi: 30
+_hi: 30
+El valor del índice: 0 es: 15
+El valor del índice: 1 es: 15
+El valor del índice: 2 es: 8
+El valor del índice: 3 es: 8
+El valor del índice: 4 es: 99999
+El valor del índice: 5 es: 8
+El valor del índice: 6 es: 8
+El valor del índice: 7 es: 8
+El valor del índice: 8 es: 8
+El valor del índice: 9 es: 8
+Una línea:  120 135 576 30.00 30.00 
+Una línea:  15 15 8 8 8 99999 8 8 8 8
+Los datos del avion 5 son: 
+_Ei: 120
+_Ti: 135
+_Li: 576
+_gi: 30
+_hi: 30
+El valor del índice: 0 es: 15
+El valor del índice: 1 es: 15
+El valor del índice: 2 es: 8
+El valor del índice: 3 es: 8
+El valor del índice: 4 es: 8
+El valor del índice: 5 es: 99999
+El valor del índice: 6 es: 8
+El valor del índice: 7 es: 8
+El valor del índice: 8 es: 8
+El valor del índice: 9 es: 8
+Una línea:  124 138 577 30.00 30.00 
+Una línea:  15 15 8 8 8 8 99999 8 8 8
+Los datos del avion 6 son: 
+_Ei: 124
+_Ti: 138
+_Li: 577
+_gi: 30
+_hi: 30
+El valor del índice: 0 es: 15
+El valor del índice: 1 es: 15
+El valor del índice: 2 es: 8
+El valor del índice: 3 es: 8
+El valor del índice: 4 es: 8
+El valor del índice: 5 es: 8
+El valor del índice: 6 es: 99999
+El valor del índice: 7 es: 8
+El valor del índice: 8 es: 8
+El valor del índice: 9 es: 8
+Una línea:  126 140 573 30.00 30.00 
+Una línea:  15 15 8 8 8 8 8 99999 8 8
+Los datos del avion 7 son: 
+_Ei: 126
+_Ti: 140
+_Li: 573
+_gi: 30
+_hi: 30
+El valor del índice: 0 es: 15
+El valor del índice: 1 es: 15
+El valor del índice: 2 es: 8
+El valor del índice: 3 es: 8
+El valor del índice: 4 es: 8
+El valor del índice: 5 es: 8
+El valor del índice: 6 es: 8
+El valor del índice: 7 es: 99999
+El valor del índice: 8 es: 8
+El valor del índice: 9 es: 8
+Una línea:  135 150 591 30.00 30.00 
+Una línea:  15 15 8 8 8 8 8 8 99999 8
+Los datos del avion 8 son: 
+_Ei: 135
+_Ti: 150
+_Li: 591
+_gi: 30
+_hi: 30
+El valor del índice: 0 es: 15
+El valor del índice: 1 es: 15
+El valor del índice: 2 es: 8
+El valor del índice: 3 es: 8
+El valor del índice: 4 es: 8
+El valor del índice: 5 es: 8
+El valor del índice: 6 es: 8
+El valor del índice: 7 es: 8
+El valor del índice: 8 es: 99999
+El valor del índice: 9 es: 8
+Una línea:  160 180 657 30.00 30.00 
+Una línea:  15 15 8 8 8 8 8 8 8 99999
+Los datos del avion 9 son: 
+_Ei: 160
+_Ti: 180
+_Li: 657
+_gi: 30
+_hi: 30
+El valor del índice: 0 es: 15
+El valor del índice: 1 es: 15
+El valor del índice: 2 es: 8
+El valor del índice: 3 es: 8
+El valor del índice: 4 es: 8
+El valor del índice: 5 es: 8
+El valor del índice: 6 es: 8
+El valor del índice: 7 es: 8
+El valor del índice: 8 es: 8
+El valor del índice: 9 es: 99999
+Hil Climbin MM starting 
+Greedy starting 
+El valor del índice: 0 es: 99999
+El valor del índice: 1 es: 3
+El valor del índice: 2 es: 15
+El valor del índice: 3 es: 15
+El valor del índice: 4 es: 15
+El valor del índice: 5 es: 15
+El valor del índice: 6 es: 15
+El valor del índice: 7 es: 15
+El valor del índice: 8 es: 15
+El valor del índice: 9 es: 15
+El tiempo ideal mínimo es 98
+El índice del avión es 2
+98
+El tiempo ideal es 98
+El valor de i es 0 y el valor de la separación entre 2 y 0 es 15
+El tiempo total a iterar entre el avión 2 y 0 es: 113
+El tiempo minimo del avion 0 es: 129
+El tiempo max del avion 0 es: 559
+El tiempo_dinamico del avion 0 es: 98
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 0 NO es factible
+El costo total local es 462
+min_costo no factible es 1410065407
+entre
+min_costo_no_factible 462
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 98
+El valor de i es 1 y el valor de la separación entre 2 y 1 es 15
+El tiempo total a iterar entre el avión 2 y 1 es: 113
+El tiempo minimo del avion 1 es: 195
+El tiempo max del avion 1 es: 744
+El tiempo_dinamico del avion 1 es: 98
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 1 NO es factible
+El costo total local es 1595
+min_costo no factible es 462
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 98
+El valor de i es 3 y el valor de la separación entre 2 y 3 es 8
+El tiempo total a iterar entre el avión 2 y 3 es: 106
+El tiempo minimo del avion 3 es: 96
+El tiempo max del avion 3 es: 521
+El tiempo_dinamico del avion 3 es: 98
+----------------------------------------------------------------------
+El avion 3 es factible
+El costo total local es 0
+min_costo es 1410065407
+entre
+----------------------------------------------------------------------
+El tiempo ideal es 98
+El valor de i es 4 y el valor de la separación entre 2 y 4 es 8
+El tiempo total a iterar entre el avión 2 y 4 es: 106
+El tiempo minimo del avion 4 es: 110
+El tiempo max del avion 4 es: 555
+El tiempo_dinamico del avion 4 es: 98
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 4 NO es factible
+El costo total local es 561
+min_costo no factible es 462
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 98
+El valor de i es 5 y el valor de la separación entre 2 y 5 es 8
+El tiempo total a iterar entre el avión 2 y 5 es: 106
+El tiempo minimo del avion 5 es: 120
+El tiempo max del avion 5 es: 576
+El tiempo_dinamico del avion 5 es: 98
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 5 NO es factible
+El costo total local es 957
+min_costo no factible es 462
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 98
+El valor de i es 6 y el valor de la separación entre 2 y 6 es 8
+El tiempo total a iterar entre el avión 2 y 6 es: 106
+El tiempo minimo del avion 6 es: 124
+El tiempo max del avion 6 es: 577
+El tiempo_dinamico del avion 6 es: 98
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 6 NO es factible
+El costo total local es 1056
+min_costo no factible es 462
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 98
+El valor de i es 7 y el valor de la separación entre 2 y 7 es 8
+El tiempo total a iterar entre el avión 2 y 7 es: 106
+El tiempo minimo del avion 7 es: 126
+El tiempo max del avion 7 es: 573
+El tiempo_dinamico del avion 7 es: 98
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 7 NO es factible
+El costo total local es 1122
+min_costo no factible es 462
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 98
+El valor de i es 8 y el valor de la separación entre 2 y 8 es 8
+El tiempo total a iterar entre el avión 2 y 8 es: 106
+El tiempo minimo del avion 8 es: 135
+El tiempo max del avion 8 es: 591
+El tiempo_dinamico del avion 8 es: 98
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 8 NO es factible
+El costo total local es 1452
+min_costo no factible es 462
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 98
+El valor de i es 9 y el valor de la separación entre 2 y 9 es 8
+El tiempo total a iterar entre el avión 2 y 9 es: 106
+El tiempo minimo del avion 9 es: 160
+El tiempo max del avion 9 es: 657
+El tiempo_dinamico del avion 9 es: 98
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 9 NO es factible
+El costo total local es 2442
+min_costo no factible es 462
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+min_costo 0
+*****************************************
+indice final menor es 3
+El tiempo del avion 3 es 106
+El costo total  es 0
+contador elemento indice es 1
+Lista de indices de aviones es 
+2
+3
+0
+*****************************************
+El tiempo ideal es 106
+El valor de i es 1 y el valor de la separación entre 3 y 1 es 15
+El tiempo total a iterar entre el avión 3 y 1 es: 121
+El tiempo minimo del avion 1 es: 195
+El tiempo max del avion 1 es: 744
+El tiempo_dinamico del avion 1 es: 106
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 1 NO es factible
+El costo total local es 1507
+min_costo no factible es 1410065407
+entre
+min_costo_no_factible 1507
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 106
+El valor de i es 4 y el valor de la separación entre 3 y 4 es 8
+El tiempo total a iterar entre el avión 3 y 4 es: 114
+El tiempo minimo del avion 4 es: 110
+El tiempo max del avion 4 es: 555
+El tiempo_dinamico del avion 4 es: 106
+----------------------------------------------------------------------
+El avion 4 es factible
+El costo total local es 270
+min_costo es 1410065407
+entre
+----------------------------------------------------------------------
+El tiempo ideal es 106
+El valor de i es 5 y el valor de la separación entre 3 y 5 es 8
+El tiempo total a iterar entre el avión 3 y 5 es: 114
+El tiempo minimo del avion 5 es: 120
+El tiempo max del avion 5 es: 576
+El tiempo_dinamico del avion 5 es: 106
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 5 NO es factible
+El costo total local es 693
+min_costo no factible es 1507
+entre
+min_costo_no_factible 693
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 106
+El valor de i es 6 y el valor de la separación entre 3 y 6 es 8
+El tiempo total a iterar entre el avión 3 y 6 es: 114
+El tiempo minimo del avion 6 es: 124
+El tiempo max del avion 6 es: 577
+El tiempo_dinamico del avion 6 es: 106
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 6 NO es factible
+El costo total local es 792
+min_costo no factible es 693
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 106
+El valor de i es 7 y el valor de la separación entre 3 y 7 es 8
+El tiempo total a iterar entre el avión 3 y 7 es: 114
+El tiempo minimo del avion 7 es: 126
+El tiempo max del avion 7 es: 573
+El tiempo_dinamico del avion 7 es: 106
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 7 NO es factible
+El costo total local es 858
+min_costo no factible es 693
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 106
+El valor de i es 8 y el valor de la separación entre 3 y 8 es 8
+El tiempo total a iterar entre el avión 3 y 8 es: 114
+El tiempo minimo del avion 8 es: 135
+El tiempo max del avion 8 es: 591
+El tiempo_dinamico del avion 8 es: 106
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 8 NO es factible
+El costo total local es 1188
+min_costo no factible es 693
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 106
+El valor de i es 9 y el valor de la separación entre 3 y 9 es 8
+El tiempo total a iterar entre el avión 3 y 9 es: 114
+El tiempo minimo del avion 9 es: 160
+El tiempo max del avion 9 es: 657
+El tiempo_dinamico del avion 9 es: 106
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 9 NO es factible
+El costo total local es 2178
+min_costo no factible es 693
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+min_costo 270
+*****************************************
+indice final menor es 4
+El tiempo del avion 4 es 114
+El costo total  es 270
+contador elemento indice es 2
+Lista de indices de aviones es 
+2
+3
+4
+0
+*****************************************
+El tiempo ideal es 123
+El valor de i es 1 y el valor de la separación entre 4 y 1 es 15
+El tiempo total a iterar entre el avión 4 y 1 es: 129
+El tiempo minimo del avion 1 es: 195
+El tiempo max del avion 1 es: 744
+El tiempo_dinamico del avion 1 es: 114
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 1 NO es factible
+El costo total local es 1419
+min_costo no factible es 1410065407
+entre
+min_costo_no_factible 1419
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 123
+El valor de i es 5 y el valor de la separación entre 4 y 5 es 8
+El tiempo total a iterar entre el avión 4 y 5 es: 122
+El tiempo minimo del avion 5 es: 120
+El tiempo max del avion 5 es: 576
+El tiempo_dinamico del avion 5 es: 114
+----------------------------------------------------------------------
+El avion 5 es factible
+El costo total local es 390
+min_costo es 1410065407
+entre
+----------------------------------------------------------------------
+El tiempo ideal es 123
+El valor de i es 6 y el valor de la separación entre 4 y 6 es 8
+El tiempo total a iterar entre el avión 4 y 6 es: 122
+El tiempo minimo del avion 6 es: 124
+El tiempo max del avion 6 es: 577
+El tiempo_dinamico del avion 6 es: 114
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 6 NO es factible
+El costo total local es 528
+min_costo no factible es 1419
+entre
+min_costo_no_factible 528
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 123
+El valor de i es 7 y el valor de la separación entre 4 y 7 es 8
+El tiempo total a iterar entre el avión 4 y 7 es: 122
+El tiempo minimo del avion 7 es: 126
+El tiempo max del avion 7 es: 573
+El tiempo_dinamico del avion 7 es: 114
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 7 NO es factible
+El costo total local es 594
+min_costo no factible es 528
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 123
+El valor de i es 8 y el valor de la separación entre 4 y 8 es 8
+El tiempo total a iterar entre el avión 4 y 8 es: 122
+El tiempo minimo del avion 8 es: 135
+El tiempo max del avion 8 es: 591
+El tiempo_dinamico del avion 8 es: 114
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 8 NO es factible
+El costo total local es 924
+min_costo no factible es 528
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 123
+El valor de i es 9 y el valor de la separación entre 4 y 9 es 8
+El tiempo total a iterar entre el avión 4 y 9 es: 122
+El tiempo minimo del avion 9 es: 160
+El tiempo max del avion 9 es: 657
+El tiempo_dinamico del avion 9 es: 114
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 9 NO es factible
+El costo total local es 1914
+min_costo no factible es 528
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+min_costo 390
+*****************************************
+indice final menor es 5
+El tiempo del avion 5 es 122
+El costo total  es 660
+contador elemento indice es 3
+Lista de indices de aviones es 
+2
+3
+4
+5
+892411957
+*****************************************
+El tiempo ideal es 135
+El valor de i es 0 y el valor de la separación entre 5 y 0 es 15
+El tiempo total a iterar entre el avión 5 y 0 es: 137
+El tiempo minimo del avion 0 es: 129
+El tiempo max del avion 0 es: 559
+El tiempo_dinamico del avion 0 es: 122
+----------------------------------------------------------------------
+El avion 0 es factible
+El costo total local es 180
+min_costo es 1410065407
+entre
+----------------------------------------------------------------------
+El tiempo ideal es 135
+El valor de i es 1 y el valor de la separación entre 5 y 1 es 15
+El tiempo total a iterar entre el avión 5 y 1 es: 137
+El tiempo minimo del avion 1 es: 195
+El tiempo max del avion 1 es: 744
+El tiempo_dinamico del avion 1 es: 122
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 1 NO es factible
+El costo total local es 1331
+min_costo no factible es 1410065407
+entre
+min_costo_no_factible 1331
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 135
+El valor de i es 6 y el valor de la separación entre 5 y 6 es 8
+El tiempo total a iterar entre el avión 5 y 6 es: 130
+El tiempo minimo del avion 6 es: 124
+El tiempo max del avion 6 es: 577
+El tiempo_dinamico del avion 6 es: 122
+----------------------------------------------------------------------
+El avion 6 es factible
+El costo total local es 240
+min_costo es 180
+----------------------------------------------------------------------
+El tiempo ideal es 135
+El valor de i es 7 y el valor de la separación entre 5 y 7 es 8
+El tiempo total a iterar entre el avión 5 y 7 es: 130
+El tiempo minimo del avion 7 es: 126
+El tiempo max del avion 7 es: 573
+El tiempo_dinamico del avion 7 es: 122
+----------------------------------------------------------------------
+El avion 7 es factible
+El costo total local es 300
+min_costo es 180
+----------------------------------------------------------------------
+El tiempo ideal es 135
+El valor de i es 8 y el valor de la separación entre 5 y 8 es 8
+El tiempo total a iterar entre el avión 5 y 8 es: 130
+El tiempo minimo del avion 8 es: 135
+El tiempo max del avion 8 es: 591
+El tiempo_dinamico del avion 8 es: 122
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 8 NO es factible
+El costo total local es 660
+min_costo no factible es 1331
+entre
+min_costo_no_factible 660
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 135
+El valor de i es 9 y el valor de la separación entre 5 y 9 es 8
+El tiempo total a iterar entre el avión 5 y 9 es: 130
+El tiempo minimo del avion 9 es: 160
+El tiempo max del avion 9 es: 657
+El tiempo_dinamico del avion 9 es: 122
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 9 NO es factible
+El costo total local es 1650
+min_costo no factible es 660
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+min_costo 180
+*****************************************
+indice final menor es 0
+El tiempo del avion 0 es 130
+El costo total  es 840
+contador elemento indice es 4
+Lista de indices de aviones es 
+2
+3
+4
+5
+0
+540356896
+*****************************************
+El tiempo ideal es 155
+El valor de i es 1 y el valor de la separación entre 0 y 1 es 3
+El tiempo total a iterar entre el avión 0 y 1 es: 133
+El tiempo minimo del avion 1 es: 195
+El tiempo max del avion 1 es: 744
+El tiempo_dinamico del avion 1 es: 130
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 1 NO es factible
+El costo total local es 1375
+min_costo no factible es 1410065407
+entre
+min_costo_no_factible 1375
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 155
+El valor de i es 6 y el valor de la separación entre 0 y 6 es 15
+El tiempo total a iterar entre el avión 0 y 6 es: 145
+El tiempo minimo del avion 6 es: 124
+El tiempo max del avion 6 es: 577
+El tiempo_dinamico del avion 6 es: 130
+----------------------------------------------------------------------
+El avion 6 es factible
+El costo total local es 210
+min_costo es 1410065407
+entre
+----------------------------------------------------------------------
+El tiempo ideal es 155
+El valor de i es 7 y el valor de la separación entre 0 y 7 es 15
+El tiempo total a iterar entre el avión 0 y 7 es: 145
+El tiempo minimo del avion 7 es: 126
+El tiempo max del avion 7 es: 573
+El tiempo_dinamico del avion 7 es: 130
+----------------------------------------------------------------------
+El avion 7 es factible
+El costo total local es 150
+min_costo es 210
+entre
+----------------------------------------------------------------------
+El tiempo ideal es 155
+El valor de i es 8 y el valor de la separación entre 0 y 8 es 15
+El tiempo total a iterar entre el avión 0 y 8 es: 145
+El tiempo minimo del avion 8 es: 135
+El tiempo max del avion 8 es: 591
+El tiempo_dinamico del avion 8 es: 130
+----------------------------------------------------------------------
+El avion 8 es factible
+El costo total local es 150
+min_costo es 150
+----------------------------------------------------------------------
+El tiempo ideal es 155
+El valor de i es 9 y el valor de la separación entre 0 y 9 es 15
+El tiempo total a iterar entre el avión 0 y 9 es: 145
+El tiempo minimo del avion 9 es: 160
+El tiempo max del avion 9 es: 657
+El tiempo_dinamico del avion 9 es: 130
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 9 NO es factible
+El costo total local es 1155
+min_costo no factible es 1375
+entre
+min_costo_no_factible 1155
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+min_costo 150
+*****************************************
+indice final menor es 7
+El tiempo del avion 7 es 145
+El costo total  es 990
+contador elemento indice es 5
+Lista de indices de aviones es 
+2
+3
+4
+5
+0
+7
+824194353
+*****************************************
+El tiempo ideal es 140
+El valor de i es 1 y el valor de la separación entre 7 y 1 es 15
+El tiempo total a iterar entre el avión 7 y 1 es: 160
+El tiempo minimo del avion 1 es: 195
+El tiempo max del avion 1 es: 744
+El tiempo_dinamico del avion 1 es: 145
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 1 NO es factible
+El costo total local es 1078
+min_costo no factible es 1410065407
+entre
+min_costo_no_factible 1078
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 140
+El valor de i es 6 y el valor de la separación entre 7 y 6 es 8
+El tiempo total a iterar entre el avión 7 y 6 es: 153
+El tiempo minimo del avion 6 es: 124
+El tiempo max del avion 6 es: 577
+El tiempo_dinamico del avion 6 es: 145
+----------------------------------------------------------------------
+El avion 6 es factible
+El costo total local es 450
+min_costo es 1410065407
+entre
+----------------------------------------------------------------------
+El tiempo ideal es 140
+El valor de i es 8 y el valor de la separación entre 7 y 8 es 8
+El tiempo total a iterar entre el avión 7 y 8 es: 153
+El tiempo minimo del avion 8 es: 135
+El tiempo max del avion 8 es: 591
+El tiempo_dinamico del avion 8 es: 145
+----------------------------------------------------------------------
+El avion 8 es factible
+El costo total local es 90
+min_costo es 450
+entre
+----------------------------------------------------------------------
+El tiempo ideal es 140
+El valor de i es 9 y el valor de la separación entre 7 y 9 es 8
+El tiempo total a iterar entre el avión 7 y 9 es: 153
+El tiempo minimo del avion 9 es: 160
+El tiempo max del avion 9 es: 657
+El tiempo_dinamico del avion 9 es: 145
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 9 NO es factible
+El costo total local es 891
+min_costo no factible es 1078
+entre
+min_costo_no_factible 891
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+min_costo 90
+*****************************************
+indice final menor es 8
+El tiempo del avion 8 es 153
+El costo total  es 1080
+contador elemento indice es 6
+Lista de indices de aviones es 
+2
+3
+4
+5
+0
+7
+8
+892411957
+*****************************************
+El tiempo ideal es 150
+El valor de i es 1 y el valor de la separación entre 8 y 1 es 15
+El tiempo total a iterar entre el avión 8 y 1 es: 168
+El tiempo minimo del avion 1 es: 195
+El tiempo max del avion 1 es: 744
+El tiempo_dinamico del avion 1 es: 153
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 1 NO es factible
+El costo total local es 990
+min_costo no factible es 1410065407
+entre
+min_costo_no_factible 990
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 150
+El valor de i es 6 y el valor de la separación entre 8 y 6 es 8
+El tiempo total a iterar entre el avión 8 y 6 es: 161
+El tiempo minimo del avion 6 es: 124
+El tiempo max del avion 6 es: 577
+El tiempo_dinamico del avion 6 es: 153
+----------------------------------------------------------------------
+El avion 6 es factible
+El costo total local es 690
+min_costo es 1410065407
+entre
+----------------------------------------------------------------------
+El tiempo ideal es 150
+El valor de i es 9 y el valor de la separación entre 8 y 9 es 8
+El tiempo total a iterar entre el avión 8 y 9 es: 161
+El tiempo minimo del avion 9 es: 160
+El tiempo max del avion 9 es: 657
+El tiempo_dinamico del avion 9 es: 153
+----------------------------------------------------------------------
+El avion 9 es factible
+El costo total local es 570
+min_costo es 690
+entre
+----------------------------------------------------------------------
+min_costo 570
+*****************************************
+indice final menor es 9
+El tiempo del avion 9 es 161
+El costo total  es 1650
+contador elemento indice es 7
+Lista de indices de aviones es 
+2
+3
+4
+5
+0
+7
+8
+9
+0
+*****************************************
+El tiempo ideal es 180
+El valor de i es 1 y el valor de la separación entre 9 y 1 es 15
+El tiempo total a iterar entre el avión 9 y 1 es: 176
+El tiempo minimo del avion 1 es: 195
+El tiempo max del avion 1 es: 744
+El tiempo_dinamico del avion 1 es: 161
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 1 NO es factible
+El costo total local es 902
+min_costo no factible es 1410065407
+entre
+min_costo_no_factible 902
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El tiempo ideal es 180
+El valor de i es 6 y el valor de la separación entre 9 y 6 es 8
+El tiempo total a iterar entre el avión 9 y 6 es: 169
+El tiempo minimo del avion 6 es: 124
+El tiempo max del avion 6 es: 577
+El tiempo_dinamico del avion 6 es: 161
+----------------------------------------------------------------------
+El avion 6 es factible
+El costo total local es 930
+min_costo es 1410065407
+entre
+----------------------------------------------------------------------
+min_costo 930
+*****************************************
+indice final menor es 6
+El tiempo del avion 6 es 169
+El costo total  es 2580
+contador elemento indice es 8
+Lista de indices de aviones es 
+2
+3
+4
+5
+0
+7
+8
+9
+6
+0
+*****************************************
+El tiempo ideal es 138
+El valor de i es 1 y el valor de la separación entre 6 y 1 es 15
+El tiempo total a iterar entre el avión 6 y 1 es: 184
+El tiempo minimo del avion 1 es: 195
+El tiempo max del avion 1 es: 744
+El tiempo_dinamico del avion 1 es: 169
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+El avion 1 NO es factible
+El costo total local es 814
+min_costo no factible es 1410065407
+entre
+min_costo_no_factible 814
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+------------------------------------ ENTRO A NO FACTIBLE ------------------------------------
+min_costo_no_factible 814
+*****************************************
+indice final menor es 6
+El tiempo del avion 6 es 184
+El costo total  es 3394
+contador elemento indice es 9
+Lista de indices de aviones es 
+2
+3
+4
+5
+0
+7
+8
+9
+6
+1
+49
+*****************************************
+El costo total es3394
+El tiempo del avión 2 es 122
+El tiempo del avión 3 es 21894
+El tiempo del avión 4 es 0
+El tiempo del avión 5 es 98
+El tiempo del avión 0 es 106
+El tiempo del avión 7 es 114
+El tiempo del avión 8 es 169
+El tiempo del avión 9 es 130
+El tiempo del avión 6 es 145
+El tiempo del avión 1 es 153

@@ -2,7 +2,7 @@ compile:
 	g++ -std=c++1y  main.cpp -Wall -o main
 
 run:
-	./main $(file) 
+	./main $(file) > output.txt
 
 valgrind:
 	valgrind ./main 
