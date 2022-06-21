@@ -13,6 +13,7 @@ using namespace std;
 
 //variable global
 bool flag = true;
+int n_aviones_global;
 
 class Airplane {
    private:
@@ -125,7 +126,7 @@ Representation::Representation(int _n_aviones){
 }
 
 void Representation::read(){
-   cout << "El costo total es" << costoTotal << endl;
+   cout << "El costo total es: " << costoTotal << endl;
    for (int i = 0 ; i < n_aviones ; i++){
       cout << "El tiempo del avión " << planes[i] << " es " << times[i] << endl;
    }
@@ -151,7 +152,7 @@ class Greedy{
       int tiempo_dinamico;
       int* lista_indices_aviones;
       int contador_elemntos_indice;
-      Representation Sc = Representation(10);
+      Representation Sc = Representation(n_aviones_global);
       Airplane *airplanes;
    public:
       Greedy (int, Airplane* ); 
@@ -160,8 +161,6 @@ class Greedy{
       void miopeFunction(int);
       bool checkIfExist(int, int);
       int shortestIdealTime();
-
-      
 };
 
 Greedy:: Greedy(int _n_aviones, Airplane* _airplanes){
@@ -170,10 +169,6 @@ Greedy:: Greedy(int _n_aviones, Airplane* _airplanes){
    costo_total = 0;
    airplanes =(Airplane * )malloc(n_aviones*sizeof(Airplane));
    airplanes = _airplanes;
-   int* _S_ij = airplanes[0].getS_ij();
-   for (int i = 0 ; i < n_aviones ; i++){
-      cout << "El valor del índice: " << i << " es: " << _S_ij[i] << endl;
-   }
 }
 
 
@@ -188,7 +183,7 @@ void Greedy::startAlgorithm(){
    Sc.setTimes(contador_elemntos_indice, tiempo_dinamico); 
    contador_elemntos_indice += 1;
    cout << min << endl;
-   for (int i = 0 ; i < n_aviones - 1  ; i++){
+   for (int i = 0 ; i < n_aviones -1  ; i++){
       miopeFunction(i);
    }
    Sc.setPlanes(lista_indices_aviones);
@@ -216,24 +211,16 @@ void Greedy:: miopeFunction(int posicion_elemento_a_iterar){
    int indice_final_menor;
    int indice_final_menor_no_factible;
    int elemnto_a_verificar = lista_indices_aviones[posicion_elemento_a_iterar];
-   int iterar = n_aviones - contador_elemntos_indice;
    int tiempo_total;
    bool factibilidad = false;
    for(int i = 0 ; i < n_aviones ; i++){
          if (checkIfExist(i,contador_elemntos_indice)){
             //no esta en la lista
             // calcular el tiempo, factibilidad y costo
-            int tiempo_ideal = airplanes[elemnto_a_verificar].getTi();
-            cout << "El tiempo ideal es " << tiempo_ideal << endl; 
             int separacion = airplanes[elemnto_a_verificar].get_S_ij(i);
-            cout << "El valor de i es "<< i << " y el valor de la separación entre " << elemnto_a_verificar << " y " << i  << " es " << separacion << endl;
             tiempo_total = tiempo_dinamico + separacion;
-            cout << "El tiempo total a iterar entre el avión " << elemnto_a_verificar << " y " << i << " es: " << tiempo_total << endl;
             int tiempo_minimo = airplanes[i].getEi();
             int tiempo_max = airplanes[i].getLi();
-            cout << "El tiempo minimo del avion " << i << " es: " << tiempo_minimo << endl;
-            cout << "El tiempo max del avion " << i << " es: " << tiempo_max << endl;
-            cout << "El tiempo_dinamico del avion " << i << " es: " << tiempo_dinamico << endl;
             int tiempo_ideal_aux = airplanes[i].getTi();
             int costo_avion_iterar;
             //se obtiene el costo g_i
@@ -246,75 +233,46 @@ void Greedy:: miopeFunction(int posicion_elemento_a_iterar){
             //revisa factibilidad
             if (tiempo_total >= tiempo_minimo && tiempo_total <= tiempo_max){
                factibilidad = true;
-               cout << "----------------------------------------------------------------------" << endl;
-               cout << "El avion " << i << " es factible" << endl;
                //calculamos el costo
+               //costo_total_local = abs(tiempo_total-tiempo_ideal_aux)*costo_avion_iterar;
+               if (tiempo_total-tiempo_ideal_aux == 0){
+                  costo_total_local = 0 ;
+               }else{
 
-
-               costo_total_local = abs(tiempo_total-tiempo_ideal_aux)*costo_avion_iterar;
-               cout << "El costo total local es " << costo_total_local << endl;
-               cout << "min_costo es " << min_costo << endl;
+                  costo_total_local = costo_avion_iterar;
+               }
                // si hay más de una opción factible, guardamaos el costo de esa funcion factible y el indice
                if (costo_total_local < min_costo ){
-                  cout << "entre" << endl;
                   min_costo = costo_total_local;
                   indice_final_menor = i;
-                  
                }
-               cout << "----------------------------------------------------------------------" << endl;
-
             }else{
-               cout << "''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''" << endl;
-               cout << "El avion " << i << " NO es factible" << endl;
                // si ya no quedan mas soluciones
-               costo_total_local = abs(tiempo_total-tiempo_ideal_aux)*costo_avion_iterar*1.1;
-               cout << "El costo total local es " << costo_total_local << endl;
-               cout << "min_costo no factible es " << min_costo_no_factible << endl;
+               //costo_total_local = abs(tiempo_total-tiempo_ideal_aux)*costo_avion_iterar*1.1;
+               costo_total_local = costo_avion_iterar*1.1;
                // si hay más de una opción factible, guardamaos el costo de esa funcion factible y el indice
                if (costo_total_local < min_costo_no_factible ){
-                  cout << "entre" << endl;
                   min_costo_no_factible = costo_total_local;
                   indice_final_menor_no_factible = i;
-                  cout << "min_costo_no_factible "<< min_costo_no_factible <<endl;
-                  
+                  tiempo_total = tiempo_minimo;   
                }
-               cout << "''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''" << endl;
-
             }
 
          }
    }
    //si no quedaron soluciones factibles
    if(!factibilidad){
-      cout << "------------------------------------ ENTRO A NO FACTIBLE ------------------------------------" << endl;
       lista_indices_aviones[contador_elemntos_indice] = indice_final_menor_no_factible;
-      cout << "min_costo_no_factible " << min_costo_no_factible << endl;
       costo_total = costo_total + min_costo_no_factible;
       Sc.setSolucionFactible(false);
    }else{
 
       lista_indices_aviones[contador_elemntos_indice] = indice_final_menor;
-      cout << "min_costo " << min_costo << endl;
       costo_total = costo_total + min_costo;
    }
-   Sc.setTimes(indice_final_menor, tiempo_dinamico);
+   Sc.setTimes(posicion_elemento_a_iterar+1, tiempo_total);
    tiempo_dinamico = tiempo_total;
-
-   
-
-   cout << "*****************************************" <<endl;
-   cout << "indice final menor es " << indice_final_menor << endl;
-   cout << "El tiempo del avion " << indice_final_menor << " es " << tiempo_dinamico << endl;
-   cout << "El costo total  es " << costo_total << endl;
-   cout << "contador elemento indice es " << contador_elemntos_indice <<endl;
    contador_elemntos_indice = contador_elemntos_indice + 1 ;
-   cout << "Lista de indices de aviones es " <<endl;
-   for (int i = 0 ; i <= contador_elemntos_indice ; i++){
-      cout << lista_indices_aviones[i] << endl;
-   }
-   cout << "*****************************************" <<endl;
-   
-
 }
 
 int Greedy::shortestIdealTime(){
@@ -327,9 +285,6 @@ int Greedy::shortestIdealTime(){
          indice = i;
       }
    }
-   cout << "El tiempo ideal mínimo es " << min << endl;
-   cout << "El índice del avión es " << indice << endl;
-
    return indice;
 }
 
@@ -365,15 +320,11 @@ void HillClimbingMM::readFile(){
    string linea;
    getline(archivo, linea);
    n_aviones = stoi(linea);
-   cout << "El número de aviones es: ";
-   cout << n_aviones << endl;
+   n_aviones_global = n_aviones;
    airplanes =(Airplane * )malloc(n_aviones*sizeof(Airplane));
    
    // Obtener línea de archivo, y almacenar contenido en "linea"
-
    while (getline(archivo, linea)) {
-      cout << "Una línea: ";
-      cout << linea << endl;
       lines.push_back(linea);
       string word;
       istringstream ss(linea);
@@ -417,25 +368,6 @@ void HillClimbingMM::readFile(){
          }
          airplanes[contador_aviones].setSC_ij(S_ij, n_aviones); 
          flag = true; 
-         int _Ei = airplanes[contador_aviones].getEi();
-         int _Ti = airplanes[contador_aviones].getTi();
-         int _Li = airplanes[contador_aviones].getLi();
-         int _gi = airplanes[contador_aviones].getgi();
-         int _hi = airplanes[contador_aviones].gethi();         
-         cout << "Los datos del avion " << contador_aviones << " son: " << endl;
-
-         cout << "_Ei: " << _Ei << endl;
-         cout << "_Ti: " << _Ti << endl;
-         cout << "_Li: " << _Li << endl;
-         cout << "_gi: " << _gi << endl;
-         cout << "_hi: " << _hi << endl;
-         
-         int* _S_ij = airplanes[contador_aviones].getS_ij();
-
-         for (int i = 0 ; i < n_aviones ; i++){
-            cout << "El valor del índice: " << i << " es: " << _S_ij[i] << endl;
-         }
-
          contador_aviones = contador_aviones + 1;  
       }
       //  free(S_ij);
@@ -450,6 +382,10 @@ void HillClimbingMM::startAlgorithm(){
    //Comienza el algoritmo de Greedy para obtener una solución inicial 
    Greedy Sc (n_aviones, airplanes);
    Sc.startAlgorithm();
+
+   auto stop= chrono::high_resolution_clock::now();
+   auto duration= chrono::duration_cast<chrono::microseconds>(stop-start);
+   cout << "Tiempo de ejecución: "<< duration.count()<<" microsegundos"<<endl;
 }
 
 
@@ -469,7 +405,6 @@ int main(int argc, char *argv[]){
    string filename = argv[1];
 
    if(existFile(filename)){
-      cout << "El archivo existe" << endl;
       // se incializa clase de hillClimbing
       HillClimbingMM HCMM(filename);
       HCMM.readFile();
