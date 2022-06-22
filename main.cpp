@@ -218,7 +218,6 @@ Greedy:: Greedy(int _n_aviones, Airplane* _airplanes){
 Representation Greedy::startAlgorithm(){
    lista_indices_aviones = (int *)malloc(n_aviones*sizeof(int));
    int indice = shortestIdealTime();
-   int min = airplanes[indice].getTi();
    //se guarda el avión el menor tiempo ideal en la lista de índices
    contador_elemntos_indice = 0;
    lista_indices_aviones[contador_elemntos_indice] = indice;
@@ -273,7 +272,6 @@ void Greedy:: miopeFunction(int posicion_elemento_a_iterar){
             if (isFeasible(tiempo_total, tiempo_minimo, tiempo_max)){
                factibilidad = true;
                //calculamos el costo
-               //costo_total_local = abs(tiempo_total-tiempo_ideal_aux)*costo_avion_iterar;
                if (tiempo_total-tiempo_ideal_aux == 0){
                   costo_total_local = 0 ;
                }else{
@@ -345,6 +343,7 @@ class HillClimbingMM{
       Representation generetareNeighboors(Representation);
       void clear();
       int checkNeighboor(Representation);
+      Representation randomSolution();
 };
 
 
@@ -433,7 +432,6 @@ int HillClimbingMM::checkNeighboor(Representation _Sc){
       if(!isFeasible(tiempo_total, tiempo_mas_temprano, tiempo_mas_tarde)){
          return -1;
       }else{
-         int tiempo_ideal_aux = airplanes[j].getTi();
          int costo_avion_iterar;
          if (tiempo_total >= tiempo_mas_temprano){
             costo_avion_iterar = airplanes[i].getgi();
@@ -485,14 +483,11 @@ Representation HillClimbingMM::generetareNeighboors(Representation _Sc){
    //recorremos los vecinos, revisamos factibilidad y obtenemos el mejor (Sn)
    for (int i = 0 ; i < n_aviones ; i++){
       Representation aux = neighboors[i];
-      // aux.read();
       // se chequea la factbilidad de todos los vecinos y devuelve el costo del vecino factbile. Si devuelve -1 , es porque ese vecino no es factible
       int factibilidad_costo_vecindario = checkNeighboor(aux);
 
       if(factibilidad_costo_vecindario != -1){
          hay_vecino_factible = true;
-         // cout << "El vecino: " << i << " es factible " << endl; 
-         // cout << "Costo vecino: " << factibilidad_costo_vecindario << endl;
          neighboors[i].setCostoTotal(factibilidad_costo_vecindario);
          if ( factibilidad_costo_vecindario < min ){
             min = factibilidad_costo_vecindario;
@@ -511,6 +506,42 @@ Representation HillClimbingMM::generetareNeighboors(Representation _Sc){
    
 }
 
+
+Representation HillClimbingMM::randomSolution(){
+   Representation S_random(n_aviones);
+   int* _airplanes = (int *)malloc(n_aviones*sizeof(int));
+   int* _times = (int *)malloc(n_aviones*sizeof(int));
+   int costo_total_local = 0;
+   for (int i = 0; i < n_aviones ; i++){
+      int j = i + 1;
+      int tiempo_minimo = airplanes[i].getEi();
+      int separacion = airplanes[i].get_S_ij(j);
+      int tiempo_max = airplanes[i].getLi();
+      int diferencia = tiempo_max - tiempo_minimo - 1;
+      // genera un tiempo aleatorio entre tiempo minimo y maximo del avion
+      int tiempo_aterrizaje = rand() %diferencia + tiempo_minimo;
+      // nos aseguramos que los vuelos cumplan la separacion correpondiente con el vuelo siguiente, por lo que restamos la separacion  y le damos esa ventana de tiempo
+      tiempo_aterrizaje = tiempo_aterrizaje - separacion;
+      int costo_avion_iterar;
+      _airplanes[i] = i;
+      _times[i] = tiempo_aterrizaje;
+      if (tiempo_aterrizaje >= tiempo_minimo){
+         costo_avion_iterar = airplanes[i].getgi();
+      }else{
+         costo_avion_iterar = airplanes[i].gethi();
+      }
+      if (tiempo_aterrizaje-airplanes[i].getTi() == 0){
+         costo_total_local = costo_total_local + 0 ;
+      }else{
+         costo_total_local = costo_total_local + costo_avion_iterar;
+      }
+   }
+   S_random.setCostoTotal(costo_total_local);
+   S_random.setAirplanes(_airplanes);
+   S_random.setAllTimes(_times);
+   return S_random;
+}
+
 void HillClimbingMM::startAlgorithm(){
    cout << "Hil Climbin MM starting " << endl;
    //comienza el crónometro para contabilizar el tiempo el cual se demora el algoritmo
@@ -522,8 +553,13 @@ void HillClimbingMM::startAlgorithm(){
    //Se incializa Sbest con el valor inicial entregado por el algoritmo de greedy
    Sbest = Sc ;
    //recorremos por todos los restarts 
-   for ( int i = 0 ; i < restarts ; i++){
+   for ( int i = 0 ; i <= restarts ; i++){
       local = false;
+      if(i!=0){
+         // se genera una solición random, luego de ocupar la solución greedy al comienzo
+         Representation S_random = randomSolution();
+         Sc = S_random;
+      }
       while(!local){
          //Generamos el vecinadario a través de un movimiento y seleccionamos un punto del vecinadrio
          Representation Sn = generetareNeighboors(Sc);
