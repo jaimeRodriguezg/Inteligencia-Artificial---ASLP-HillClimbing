@@ -18,6 +18,17 @@ bool flag = true;
 int n_aviones_global;
 int restarts;
 
+//revisa que la separacion de los tiempos se cumpla
+bool isFeasible(int tiempo_actual, int tiempo_minimo, int tiempo_max){
+    if (tiempo_actual >= tiempo_minimo && tiempo_actual <= tiempo_max){
+      return true;
+    }
+    return false;
+}
+
+
+
+
 class Airplane {
    private:
       int E_i; //Riempo más temprano de aterrizaje para el avión
@@ -123,7 +134,7 @@ class Representation {
       void setSolucionFactible(bool);
       int* getAirplanes();
       int* getTimes();
-      int getsetCostoTotal();
+      int getCostoTotal();
 };
 
 Representation::Representation(int _n_aviones){
@@ -174,8 +185,8 @@ int* Representation::getAirplanes(){
 int* Representation::getTimes(){
    return times;
 }
-int Representation::getsetCostoTotal(){
-   return solucionFactible;
+int Representation::getCostoTotal(){
+   return costoTotal;
 }
 
 class Greedy{
@@ -189,7 +200,6 @@ class Greedy{
       Airplane *airplanes;
    public:
       Greedy (int, Airplane* ); 
-      
       Representation startAlgorithm();
       void miopeFunction(int);
       bool checkIfExist(int, int);
@@ -261,14 +271,13 @@ void Greedy:: miopeFunction(int posicion_elemento_a_iterar){
                costo_avion_iterar = airplanes[i].gethi();
             }
             //revisa factibilidad
-            if (tiempo_total >= tiempo_minimo && tiempo_total <= tiempo_max){
+            if (isFeasible(tiempo_total, tiempo_minimo, tiempo_max)){
                factibilidad = true;
                //calculamos el costo
                //costo_total_local = abs(tiempo_total-tiempo_ideal_aux)*costo_avion_iterar;
                if (tiempo_total-tiempo_ideal_aux == 0){
                   costo_total_local = 0 ;
                }else{
-
                   costo_total_local = costo_avion_iterar;
                }
                // si hay más de una opción factible, guardamaos el costo de esa funcion factible y el indice
@@ -336,6 +345,7 @@ class HillClimbingMM{
       void checkSolution();
       Representation generetareNeighboors(Representation);
       void clear();
+      int checkNeighboor(Representation);
 };
 
 
@@ -390,7 +400,6 @@ void HillClimbingMM::readFile(){
             }
             contador = contador + 1 ;  
          }
-         
          airplanes[contador_aviones].setETLgh(E_i,T_i,L_i,g_i,h_i);
          flag = false;
       // se lee las separaciones
@@ -406,6 +415,43 @@ void HillClimbingMM::readFile(){
    }
 }
 
+// se chequea la factbilidad de todos los vecinos y devuelve el costo del vecino factbile. Si devuelve -1 , es porque ese vecino no es factible
+int HillClimbingMM::checkNeighboor(Representation _Sc){
+   //Representation S_aux = _Sc; //se genera una copia
+   int* airplaneSToCheck = _Sc.getAirplanes();
+   int* timesTocheck = _Sc.getTimes();
+   int costo_total_local = 0;
+   for (int i = 0 ; i < n_aviones_global -1 ; i++){
+      int j = airplaneSToCheck[i+1];
+      int airplaneToCheck =  airplaneSToCheck[i];
+      int tiempo_actual = timesTocheck[i];
+      int separacion = airplanes[airplaneToCheck].get_S_ij(j);
+      int tiempo_mas_temprano = airplanes[j].getEi();
+      int tiempo_mas_tarde = airplanes[j].getLi();
+      int tiempo_total = tiempo_actual + separacion;
+      int tiempo_avion_j = timesTocheck[i+1];
+      // la separacion nueva, no cumple con la separacion establecida por los aviones no factible
+      if(!isFeasible(tiempo_total, tiempo_mas_temprano, tiempo_mas_tarde)){
+         return -1;
+      }else{
+         int tiempo_ideal_aux = airplanes[j].getTi();
+         int costo_avion_iterar;
+         if (tiempo_total >= tiempo_mas_temprano){
+            costo_avion_iterar = airplanes[i].getgi();
+         }else{
+            costo_avion_iterar = airplanes[i].gethi();
+         }
+         if (tiempo_total-tiempo_avion_j == 0){
+            costo_total_local = costo_total_local + 0 ;
+         }else{
+            costo_total_local = costo_total_local + costo_avion_iterar;
+         }
+      }
+   }
+   _Sc.setCostoTotal(costo_total_local);
+   return _Sc.getCostoTotal(); ;
+}
+
 //El movimiento que se aplica es aplicar el tiempo ideal a cada avión. Por ejemplo
 //                                                [2,3,4,5,9,0,6,7,8,9,1]
 // si se tiene como solucion inicial lo siguiente [98,106,114,122,130,145,156,161,169,195]
@@ -416,16 +462,13 @@ void HillClimbingMM::readFile(){
 //[98,106,114,"135",130,145,156,161,169,195]
 //[98,106,114,122,"155",145,156,161,169,195] .......
 Representation HillClimbingMM::generetareNeighboors(Representation _Sc){
-   _Sc.read();
    neighboors =(Representation * )malloc(n_aviones*sizeof(Representation));
-
    Representation S_aux = _Sc; //se crea una copia de la clase;
    int* _airplanes = S_aux.getAirplanes();
    int* _times = S_aux.getTimes();
-   for(int k = 0 ; k < n_aviones ; k++){
-      cout << _times[k] << endl;
-   }
    int* _times_aux;
+   int min = 999999;
+   int Sn_indice;
    _times_aux =(int * )malloc(n_aviones*sizeof(int));
       for(int k = 0 ; k < n_aviones ; k++){
       _times_aux[k] = _times[k] ;
@@ -436,21 +479,41 @@ Representation HillClimbingMM::generetareNeighboors(Representation _Sc){
       Representation S_aux2 = S_aux;
       neighboors[i] = S_aux2;
       _times_aux[i] = tiempo_ideal;
-      cout << "El tiempo ideal es " << tiempo_ideal << " y _times_aux[i] con i = " << i << " es " <<  _times_aux[i] << endl;
       neighboors[i].setTimes(i, tiempo_ideal);
    }
-   cout << "------------ Neighboors ------------------" << endl;
+   bool hay_vecino_factible = false;
    //recorremos los vecinos, revisamos factibilidad y obtenemos el mejor (Sn)
    for (int i = 0 ; i < n_aviones ; i++){
       Representation aux = neighboors[i];
-      cout << "Vecino: " << i << endl;
-      for(int j = 0 ; j <n_aviones; +j++ ){
-         cout << "El tiempo del avión " << aux.getAirplanes()[j] << " es " << aux.getTimes()[j] << endl;
+      // se chequea la factbilidad de todos los vecinos y devuelve el costo del vecino factbile. Si devuelve -1 , es porque ese vecino no es factible
+      int factibilidad_costo_vecindario = checkNeighboor(aux);
+
+      if(factibilidad_costo_vecindario != -1){
+         hay_vecino_factible = true;
+         cout << "El vecino: " << i << " es factible " << endl; 
+         cout << "Costo vecino: " << factibilidad_costo_vecindario << endl;
+         neighboors[i].setCostoTotal(factibilidad_costo_vecindario);
+         if ( factibilidad_costo_vecindario < min ){
+            min = factibilidad_costo_vecindario;
+            Sn_indice = i;
+         } 
       }
    }
-   cout << "------------ Neighboors ------------------" << endl;
-   S_aux.read();
-   _Sc.read();
+   if(!hay_vecino_factible){
+      //Ningun vecino del neighboor generado es factible, se mantiene la misma solucion
+      _Sc.read();
+      return _Sc;
+   }else{
+
+      cout << "El minimo costo es "<< min << endl;
+      cout << "El Vecino es  "<< Sn_indice << endl;
+      neighboors[Sn_indice].read();
+
+      return neighboors[Sn_indice];
+   }
+
+
+   
 }
 
 void HillClimbingMM::startAlgorithm(){
@@ -477,8 +540,7 @@ void HillClimbingMM::startAlgorithm(){
          //
       }
    }
-   cout << "sad" <<endl;
-   Sbest.read();   
+   // Sbest.read();   
 
 
 
