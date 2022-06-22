@@ -12,4 +12,193 @@ El tiempo del avión 7 es 153
 El tiempo del avión 8 es 161
 El tiempo del avión 9 es 169
 El tiempo del avión 1 es 195
-Algoritmo took: 130 microsegundos
+El costo total es: 201
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 114
+El tiempo del avión 5 es 122
+El tiempo del avión 0 es 130
+El tiempo del avión 6 es 145
+El tiempo del avión 7 es 153
+El tiempo del avión 8 es 161
+El tiempo del avión 9 es 169
+El tiempo del avión 1 es 195
+98
+106
+114
+122
+130
+145
+153
+161
+169
+195
+.....
+.....
+98
+106
+114
+122
+130
+145
+153
+161
+169
+195
+El tiempo ideal es 98 y _times_aux[i] con i = 0 es 98
+El tiempo ideal es 106 y _times_aux[i] con i = 1 es 106
+El tiempo ideal es 123 y _times_aux[i] con i = 2 es 123
+El tiempo ideal es 135 y _times_aux[i] con i = 3 es 135
+El tiempo ideal es 155 y _times_aux[i] con i = 4 es 155
+El tiempo ideal es 138 y _times_aux[i] con i = 5 es 138
+El tiempo ideal es 140 y _times_aux[i] con i = 6 es 140
+El tiempo ideal es 150 y _times_aux[i] con i = 7 es 150
+El tiempo ideal es 180 y _times_aux[i] con i = 8 es 180
+El tiempo ideal es 258 y _times_aux[i] con i = 9 es 258
+------------ Neighboors ------------------
+Vecino: 0
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 114
+El tiempo del avión 5 es 122
+El tiempo del avión 0 es 130
+El tiempo del avión 6 es 145
+El tiempo del avión 7 es 153
+El tiempo del avión 8 es 161
+El tiempo del avión 9 es 169
+El tiempo del avión 1 es 195
+Vecino: 1
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 114
+El tiempo del avión 5 es 122
+El tiempo del avión 0 es 130
+El tiempo del avión 6 es 145
+El tiempo del avión 7 es 153
+El tiempo del avión 8 es 161
+El tiempo del avión 9 es 169
+El tiempo del avión 1 es 195
+Vecino: 2
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 123
+El tiempo del avión 5 es 122
+El tiempo del avión 0 es 130
+El tiempo del avión 6 es 145
+El tiempo del avión 7 es 153
+El tiempo del avión 8 es 161
+El tiempo del avión 9 es 169
+El tiempo del avión 1 es 195
+Vecino: 3
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 114
+El tiempo del avión 5 es 135
+El tiempo del avión 0 es 130
+El tiempo del avión 6 es 145
+El tiempo del avión 7 es 153
+El tiempo del avión 8 es 161
+El tiempo del avión 9 es 169
+El tiempo del avión 1 es 195
+Vecino: 4
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 114
+El tiempo del avión 5 es 122
+El tiempo del avión 0 es 155
+El tiempo del avión 6 es 145
+El tiempo del avión 7 es 153
+El tiempo del avión 8 es 161
+El tiempo del avión 9 es 169
+El tiempo del avión 1 es 195
+Vecino: 5
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 114
+El tiempo del avión 5 es 122
+El tiempo del avión 0 es 130
+El tiempo del avión 6 es 138
+El tiempo del avión 7 es 153
+El tiempo del avión 8 es 161
+El tiempo del avión 9 es 169
+El tiempo del avión 1 es 195
+Vecino: 6
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 114
+El tiempo del avión 5 es 122
+El tiempo del avión 0 es 130
+El tiempo del avión 6 es 145
+El tiempo del avión 7 es 140
+El tiempo del avión 8 es 161
+El tiempo del avión 9 es 169
+El tiempo del avión 1 es 195
+Vecino: 7
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 114
+El tiempo del avión 5 es 122
+El tiempo del avión 0 es 130
+El tiempo del avión 6 es 145
+El tiempo del avión 7 es 153
+El tiempo del avión 8 es 150
+El tiempo del avión 9 es 169
+El tiempo del avión 1 es 195
+Vecino: 8
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 114
+El tiempo del avión 5 es 122
+El tiempo del avión 0 es 130
+El tiempo del avión 6 es 145
+El tiempo del avión 7 es 153
+El tiempo del avión 8 es 161
+El tiempo del avión 9 es 180
+El tiempo del avión 1 es 195
+Vecino: 9
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 114
+El tiempo del avión 5 es 122
+El tiempo del avión 0 es 130
+El tiempo del avión 6 es 145
+El tiempo del avión 7 es 153
+El tiempo del avión 8 es 161
+El tiempo del avión 9 es 169
+El tiempo del avión 1 es 258
+------------ Neighboors ------------------
+El costo total es: 201
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 114
+El tiempo del avión 5 es 122
+El tiempo del avión 0 es 130
+El tiempo del avión 6 es 145
+El tiempo del avión 7 es 153
+El tiempo del avión 8 es 161
+El tiempo del avión 9 es 169
+El tiempo del avión 1 es 195
+El costo total es: 201
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 114
+El tiempo del avión 5 es 122
+El tiempo del avión 0 es 130
+El tiempo del avión 6 es 145
+El tiempo del avión 7 es 153
+El tiempo del avión 8 es 161
+El tiempo del avión 9 es 169
+El tiempo del avión 1 es 195
+sad
+El costo total es: 201
+El tiempo del avión 2 es 98
+El tiempo del avión 3 es 106
+El tiempo del avión 4 es 114
+El tiempo del avión 5 es 122
+El tiempo del avión 0 es 130
+El tiempo del avión 6 es 145
+El tiempo del avión 7 es 153
+El tiempo del avión 8 es 161
+El tiempo del avión 9 es 169
+El tiempo del avión 1 es 195
+Tiempo de ejecución: 254 microsegundos

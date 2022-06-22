@@ -7,7 +7,7 @@ make compile
 ```
 ### Para ejecutar:
 ```
-make run file=`path/instance`
+make run file=path/instance restart=amountOfRestarts
 ```
 ### Limpieza de los ejecutables:
 ```

@@ -9,11 +9,14 @@
 #include <chrono> 
 #include <cmath>
 #include <bits/stdc++.h> 
+#include <algorithm>
+#include <iterator>
 using namespace std;
 
 //variable global
 bool flag = true;
 int n_aviones_global;
+int restarts;
 
 class Airplane {
    private:
@@ -105,44 +108,74 @@ class Representation {
    private:
       int costoTotal;
       int n_aviones;
-      int *planes;
+      int *airplanes;
       int *times;
       bool solucionFactible;
    
    public: 
       Representation(int);
+      Representation(const Representation& other);//copy constructor
       void read();
-      void setPlanes(int* );
+      void setAirplanes(int* );
       void setTimes(int, int);
+      void setAllTimes(int *);
       void setCostoTotal(int);
       void setSolucionFactible(bool);
+      int* getAirplanes();
+      int* getTimes();
+      int getsetCostoTotal();
 };
 
 Representation::Representation(int _n_aviones){
    n_aviones = _n_aviones;
-   planes = (int *)malloc(n_aviones*sizeof(int));
+   airplanes = (int *)malloc(n_aviones*sizeof(int));
    times = (int *)malloc(n_aviones*sizeof(int));
    solucionFactible = true;
+}
+Representation::Representation(const Representation &other){
+      costoTotal = other.costoTotal;
+      n_aviones = other.n_aviones;
+      solucionFactible = other.solucionFactible;
+      airplanes = (int *)malloc(n_aviones*sizeof(int));
+      times = (int *)malloc(n_aviones*sizeof(int));
+      for (int i = 0 ; i < n_aviones ; i++){
+         airplanes[i] = other.airplanes[i];
+         times[i] = other.times[i];
+      }
 }
 
 void Representation::read(){
    cout << "El costo total es: " << costoTotal << endl;
    for (int i = 0 ; i < n_aviones ; i++){
-      cout << "El tiempo del avión " << planes[i] << " es " << times[i] << endl;
+      cout << "El tiempo del avión " << airplanes[i] << " es " << times[i] << endl;
    }
 }
-void Representation::setPlanes(int* _planes){
-   planes = _planes;  
+void Representation::setAirplanes(int* _planes){
+   airplanes = _planes;  
 
 }
 void Representation::setTimes(int position ,int time){
    times[position] = time;
 }
+
+void Representation::setAllTimes(int* _times){
+   times = _times;
+}
+
 void Representation::setCostoTotal(int _costoTotal){
    costoTotal = _costoTotal;
 }
 void Representation::setSolucionFactible(bool _solucionFactible){
    solucionFactible = _solucionFactible;
+}
+int* Representation::getAirplanes(){
+   return airplanes;
+}
+int* Representation::getTimes(){
+   return times;
+}
+int Representation::getsetCostoTotal(){
+   return solucionFactible;
 }
 
 class Greedy{
@@ -157,7 +190,7 @@ class Greedy{
    public:
       Greedy (int, Airplane* ); 
       
-      void startAlgorithm();
+      Representation startAlgorithm();
       void miopeFunction(int);
       bool checkIfExist(int, int);
       int shortestIdealTime();
@@ -172,7 +205,7 @@ Greedy:: Greedy(int _n_aviones, Airplane* _airplanes){
 }
 
 
-void Greedy::startAlgorithm(){
+Representation Greedy::startAlgorithm(){
    lista_indices_aviones = (int *)malloc(n_aviones*sizeof(int));
    int indice = shortestIdealTime();
    int min = airplanes[indice].getTi();
@@ -186,10 +219,9 @@ void Greedy::startAlgorithm(){
    for (int i = 0 ; i < n_aviones -1  ; i++){
       miopeFunction(i);
    }
-   Sc.setPlanes(lista_indices_aviones);
+   Sc.setAirplanes(lista_indices_aviones);
    Sc.setCostoTotal(costo_total);
-   Sc.read();
-
+   return Sc;
 }
 
 //verifica si un avion existe en la lista de aviones checkeados por greedy
@@ -202,11 +234,9 @@ bool Greedy::checkIfExist(int i, int limite){
    return true;
 }
 
-
-
 void Greedy:: miopeFunction(int posicion_elemento_a_iterar){
-   int min_costo = 9999999999;
-   int min_costo_no_factible = 9999999999;
+   int min_costo = 99999;
+   int min_costo_no_factible = 99999;
    int costo_total_local;
    int indice_final_menor;
    int indice_final_menor_no_factible;
@@ -257,7 +287,6 @@ void Greedy:: miopeFunction(int posicion_elemento_a_iterar){
                   tiempo_total = tiempo_minimo;   
                }
             }
-
          }
    }
    //si no quedaron soluciones factibles
@@ -297,11 +326,15 @@ class HillClimbingMM{
       bool local;
       string sc;
       string sb;
+      Representation Sc = Representation(n_aviones_global);
+      Representation Sbest = Representation(n_aviones_global);
+      Representation* neighboors; 
    public:
       HillClimbingMM(string);
       void readFile();
       void startAlgorithm();
       void checkSolution();
+      Representation generetareNeighboors(Representation);
       void clear();
 };
 
@@ -370,8 +403,54 @@ void HillClimbingMM::readFile(){
          flag = true; 
          contador_aviones = contador_aviones + 1;  
       }
-      //  free(S_ij);
    }
+}
+
+//El movimiento que se aplica es aplicar el tiempo ideal a cada avión. Por ejemplo
+//                                                [2,3,4,5,9,0,6,7,8,9,1]
+// si se tiene como solucion inicial lo siguiente [98,106,114,122,130,145,156,161,169,195]
+// a través del movimiento quedaría : (a cada avión se le asigna su tiempo ideal y el resto de los aviones quedan con el tiempo de la solución inicial)
+//["98",106,114,122,130,145,156,161,169,195]
+//[98,"106",114,122,130,145,156,161,169,195]
+//[98,106,"123",122,130,145,156,161,169,195]
+//[98,106,114,"135",130,145,156,161,169,195]
+//[98,106,114,122,"155",145,156,161,169,195] .......
+Representation HillClimbingMM::generetareNeighboors(Representation _Sc){
+   _Sc.read();
+   neighboors =(Representation * )malloc(n_aviones*sizeof(Representation));
+
+   Representation S_aux = _Sc; //se crea una copia de la clase;
+   int* _airplanes = S_aux.getAirplanes();
+   int* _times = S_aux.getTimes();
+   for(int k = 0 ; k < n_aviones ; k++){
+      cout << _times[k] << endl;
+   }
+   int* _times_aux;
+   _times_aux =(int * )malloc(n_aviones*sizeof(int));
+      for(int k = 0 ; k < n_aviones ; k++){
+      _times_aux[k] = _times[k] ;
+   }
+   //se generan los vecinos
+   for (int i = 0 ; i < n_aviones ; i++){
+      int tiempo_ideal = airplanes[_airplanes[i]].getTi();
+      Representation S_aux2 = S_aux;
+      neighboors[i] = S_aux2;
+      _times_aux[i] = tiempo_ideal;
+      cout << "El tiempo ideal es " << tiempo_ideal << " y _times_aux[i] con i = " << i << " es " <<  _times_aux[i] << endl;
+      neighboors[i].setTimes(i, tiempo_ideal);
+   }
+   cout << "------------ Neighboors ------------------" << endl;
+   //recorremos los vecinos, revisamos factibilidad y obtenemos el mejor (Sn)
+   for (int i = 0 ; i < n_aviones ; i++){
+      Representation aux = neighboors[i];
+      cout << "Vecino: " << i << endl;
+      for(int j = 0 ; j <n_aviones; +j++ ){
+         cout << "El tiempo del avión " << aux.getAirplanes()[j] << " es " << aux.getTimes()[j] << endl;
+      }
+   }
+   cout << "------------ Neighboors ------------------" << endl;
+   S_aux.read();
+   _Sc.read();
 }
 
 void HillClimbingMM::startAlgorithm(){
@@ -380,8 +459,28 @@ void HillClimbingMM::startAlgorithm(){
    auto start= chrono::high_resolution_clock::now();
 
    //Comienza el algoritmo de Greedy para obtener una solución inicial 
-   Greedy Sc (n_aviones, airplanes);
-   Sc.startAlgorithm();
+   Greedy greedy (n_aviones, airplanes);
+   Sc = greedy.startAlgorithm();
+   Sc.read();
+   //Se incializa Sbest con el valor inicial
+   Sbest = Sc ;
+   //recorremos por todos los restarts 
+   for ( int i = 0 ; i < restarts ; i++){
+      local = false;
+      while(!local){
+         //Generamos el vecinadario a través de un movimiento y seleccionamos un punto del vecinadrio
+         Representation Sn = generetareNeighboors(Sc);
+         local = true;
+
+
+
+         //
+      }
+   }
+   cout << "sad" <<endl;
+   Sbest.read();   
+
+
 
    auto stop= chrono::high_resolution_clock::now();
    auto duration= chrono::duration_cast<chrono::microseconds>(stop-start);
@@ -397,16 +496,26 @@ bool existFile(string path){
 }
 
 int main(int argc, char *argv[]){
+
    
    if(argc == 1 ){
       cout << "Falta ingresar la ruta del archivo" << endl;
       exit(1);
    }
+   //no ingreso la cantidad de restarts, se setea como deafult 1
+   if (argc == 2){
+      restarts = 1;
+   }
+   if (argc == 3){
+      restarts = stoi(argv[2]);
+   }
+
    string filename = argv[1];
 
    if(existFile(filename)){
       // se incializa clase de hillClimbing
       HillClimbingMM HCMM(filename);
+      //se lee los archivos y se crean las clases correspondientes
       HCMM.readFile();
       //comienza el algoritmo de hill climbing
       HCMM.startAlgorithm();
