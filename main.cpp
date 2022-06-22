@@ -225,7 +225,6 @@ Representation Greedy::startAlgorithm(){
    tiempo_dinamico = airplanes[indice].getTi();
    Sc.setTimes(contador_elemntos_indice, tiempo_dinamico); 
    contador_elemntos_indice += 1;
-   cout << min << endl;
    for (int i = 0 ; i < n_aviones -1  ; i++){
       miopeFunction(i);
    }
@@ -462,6 +461,7 @@ int HillClimbingMM::checkNeighboor(Representation _Sc){
 //[98,106,114,"135",130,145,156,161,169,195]
 //[98,106,114,122,"155",145,156,161,169,195] .......
 Representation HillClimbingMM::generetareNeighboors(Representation _Sc){
+   // cout << "Generando vecinos" << endl;
    neighboors =(Representation * )malloc(n_aviones*sizeof(Representation));
    Representation S_aux = _Sc; //se crea una copia de la clase;
    int* _airplanes = S_aux.getAirplanes();
@@ -485,13 +485,14 @@ Representation HillClimbingMM::generetareNeighboors(Representation _Sc){
    //recorremos los vecinos, revisamos factibilidad y obtenemos el mejor (Sn)
    for (int i = 0 ; i < n_aviones ; i++){
       Representation aux = neighboors[i];
+      // aux.read();
       // se chequea la factbilidad de todos los vecinos y devuelve el costo del vecino factbile. Si devuelve -1 , es porque ese vecino no es factible
       int factibilidad_costo_vecindario = checkNeighboor(aux);
 
       if(factibilidad_costo_vecindario != -1){
          hay_vecino_factible = true;
-         cout << "El vecino: " << i << " es factible " << endl; 
-         cout << "Costo vecino: " << factibilidad_costo_vecindario << endl;
+         // cout << "El vecino: " << i << " es factible " << endl; 
+         // cout << "Costo vecino: " << factibilidad_costo_vecindario << endl;
          neighboors[i].setCostoTotal(factibilidad_costo_vecindario);
          if ( factibilidad_costo_vecindario < min ){
             min = factibilidad_costo_vecindario;
@@ -501,14 +502,8 @@ Representation HillClimbingMM::generetareNeighboors(Representation _Sc){
    }
    if(!hay_vecino_factible){
       //Ningun vecino del neighboor generado es factible, se mantiene la misma solucion
-      _Sc.read();
       return _Sc;
    }else{
-
-      cout << "El minimo costo es "<< min << endl;
-      cout << "El Vecino es  "<< Sn_indice << endl;
-      neighboors[Sn_indice].read();
-
       return neighboors[Sn_indice];
    }
 
@@ -524,8 +519,7 @@ void HillClimbingMM::startAlgorithm(){
    //Comienza el algoritmo de Greedy para obtener una solución inicial 
    Greedy greedy (n_aviones, airplanes);
    Sc = greedy.startAlgorithm();
-   Sc.read();
-   //Se incializa Sbest con el valor inicial
+   //Se incializa Sbest con el valor inicial entregado por el algoritmo de greedy
    Sbest = Sc ;
    //recorremos por todos los restarts 
    for ( int i = 0 ; i < restarts ; i++){
@@ -533,20 +527,22 @@ void HillClimbingMM::startAlgorithm(){
       while(!local){
          //Generamos el vecinadario a través de un movimiento y seleccionamos un punto del vecinadrio
          Representation Sn = generetareNeighboors(Sc);
-         local = true;
-
-
-
-         //
+         if(Sn.getCostoTotal() < Sc.getCostoTotal()){
+            Sc = Sn;
+         }else {
+            local = true;
+         }
+      }
+      if (Sc.getCostoTotal() < Sbest.getCostoTotal()){
+         Sbest = Sc;
       }
    }
-   // Sbest.read();   
-
-
-
    auto stop= chrono::high_resolution_clock::now();
    auto duration= chrono::duration_cast<chrono::microseconds>(stop-start);
+   auto durationsec= chrono::duration_cast<chrono::seconds>(stop-start);
    cout << "Tiempo de ejecución: "<< duration.count()<<" microsegundos"<<endl;
+   cout << "Riempo de ejecución: "<< durationsec.count()<<" segundos"<<endl;
+   Sbest.read();   
 }
 
 
