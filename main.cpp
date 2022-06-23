@@ -11,12 +11,26 @@
 #include <bits/stdc++.h> 
 #include <algorithm>
 #include <iterator>
+//Librerias 
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <algorithm>    
+#include <chrono>       
+#include <random>       
+#include <limits>
+#include <unistd.h>
+#include <cstdlib>
+#include <signal.h>
+
 using namespace std;
 
 //variable global
 bool flag = true;
 int n_aviones_global;
 int restarts;
+
 
 //revisa que la separacion de los tiempos se cumpla
 bool isFeasible(int tiempo_actual, int tiempo_minimo, int tiempo_max){
@@ -541,7 +555,7 @@ Representation HillClimbingMM::randomSolution(){
 }
 
 void HillClimbingMM::startAlgorithm(){
-   cout << "Hil Climbing MM starting " << endl;
+   cout << "Hill Climbing MM starting " << endl;
    //comienza el crónometro para contabilizar el tiempo el cual se demora el algoritmo
    auto start= chrono::high_resolution_clock::now();
 
@@ -576,7 +590,9 @@ void HillClimbingMM::startAlgorithm(){
    auto durationsec= chrono::duration_cast<chrono::seconds>(stop-start);
    cout << "Tiempo de ejecución: "<< duration.count()<<" microsegundos"<<endl;
    cout << "Riempo de ejecución: "<< durationsec.count()<<" segundos"<<endl;
-   Sbest.read();   
+   Sbest.read();
+
+  
 }
 
 
@@ -585,6 +601,13 @@ bool existFile(string path){
    ifstream file;
    file.open(path.c_str());
    return bool(file);
+}
+
+void readRepresentation(int sign){
+   cout << "Programa detenido manualmente " << endl;
+   cout << "Temporalmente el mejor resultado es :" << endl;
+   
+   exit(sign);
 }
 
 int main(int argc, char *argv[]){
@@ -604,6 +627,7 @@ int main(int argc, char *argv[]){
 
    string filename = argv[1];
 
+   signal(SIGINT,readRepresentation);
    if(existFile(filename)){
       // se incializa clase de hillClimbing
       HillClimbingMM HCMM(filename);

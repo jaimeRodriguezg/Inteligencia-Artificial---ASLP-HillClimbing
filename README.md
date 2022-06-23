@@ -8,6 +8,10 @@ make compile
 ### Para ejecutar:
 ```
 make run file=path/instance restart=amountOfRestarts
+
+ejemplo: 
+
+make run file=airland1.txt restart=10
 ```
 ### Limpieza de los ejecutables:
 ```
