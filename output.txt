@@ -1,6 +1,7 @@
 Hil Climbin MM starting 
 Greedy starting 
-Tiempo de ejecución: 1273 microsegundos
+.............. 
+Tiempo de ejecución: 1038 microsegundos
 Riempo de ejecución: 0 segundos
 El costo total es: 310
 El tiempo del avión 0 es 463

@@ -26,9 +26,6 @@ bool isFeasible(int tiempo_actual, int tiempo_minimo, int tiempo_max){
     return false;
 }
 
-
-
-
 class Airplane {
    private:
       int E_i; //Riempo más temprano de aterrizaje para el avión
@@ -208,6 +205,7 @@ class Greedy{
 
 Greedy:: Greedy(int _n_aviones, Airplane* _airplanes){
    cout << "Greedy starting " << endl;
+   cout << ".............. " << endl;
    n_aviones = _n_aviones;  
    costo_total = 0;
    airplanes =(Airplane * )malloc(n_aviones*sizeof(Airplane));
@@ -543,7 +541,7 @@ Representation HillClimbingMM::randomSolution(){
 }
 
 void HillClimbingMM::startAlgorithm(){
-   cout << "Hil Climbin MM starting " << endl;
+   cout << "Hil Climbing MM starting " << endl;
    //comienza el crónometro para contabilizar el tiempo el cual se demora el algoritmo
    auto start= chrono::high_resolution_clock::now();
 
